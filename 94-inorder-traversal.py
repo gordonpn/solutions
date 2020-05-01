@@ -28,10 +28,10 @@ class Node:
         if self.right:
             self.right.print()
 
-    def inorder(self):
+    def in_order(self):
         if self.data:
             if self.left:
-                self.left.inorder()
+                self.left.in_order()
             print(self.data)
             if self.right:
-                self.right.inorder()
+                self.right.in_order()
