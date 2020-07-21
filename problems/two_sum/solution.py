@@ -1,11 +1,9 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        complements = {}
-        
-        for index, num in enumerate(nums):
-            diff = target - num
-            if diff in complements:
-                return [complements.get(diff), index]
-            else:
-                complements[num] = index
-        
+        numsDict = {}
+        for index, value in enumerate(nums):
+            search = target - value
+            if numsDict.get(search) is not None:
+                return [numsDict[search], index]
+            numsDict[value] = index
+            
