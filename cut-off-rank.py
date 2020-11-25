@@ -4,15 +4,15 @@ from typing import List
 def cut_off_rank(cut_off: int, num: int, scores: List[int]):
     scores.sort(reverse=True)
     ranks = [1]
-    rank = 1
-    for index in range(1, num):
-        rank += 1
+    for rank, index in enumerate(range(1, num), start=2):
         if scores[index - 1] == scores[index]:
             ranks.append(ranks[index - 1])
         else:
             ranks.append(rank)
 
-    print(ranks)
+    print(f"scores: {scores}")
+    print(f"ranks: {ranks}")
+    print(f"cut_off: {cut_off}")
     return sum(score <= cut_off for score in ranks)
 
 
