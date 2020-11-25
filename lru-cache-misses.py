@@ -1,12 +1,15 @@
-def lru_cache(num, pages, max_cache_size):
+from typing import List
+
+
+def lru_cache(num: int, pages: List[int], max_cache_size: int):
     misses = 0
-    queue = []
+    cache: List[int] = []
     for index in range(num):
-        if pages[index] not in queue:
+        if pages[index] not in cache:
             misses += 1
-        if len(queue) >= max_cache_size:
-            queue.pop(0)
-        queue.append(pages[index])
+        if len(cache) >= max_cache_size:
+            cache.pop(0)
+        cache.append(pages[index])
     return misses
 
 
