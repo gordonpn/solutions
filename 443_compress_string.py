@@ -1,4 +1,4 @@
-# Write a function which compresses a string "AAACCCBBD" to "A3C3B2D". 
+# Write a function which compresses a string "AAACCCBBD" to "A3C3B2D".
 # Then write another function to get the original string from the compressed string.
 
 
@@ -19,7 +19,7 @@ def compress(string: str) -> str:
         else:
             output_string = output_string + str(counter) + char
             counter = 1
-    
+
     return output_string
 
 

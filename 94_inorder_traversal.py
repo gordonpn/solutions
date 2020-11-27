@@ -1,5 +1,6 @@
 # Write a function to traverse a binary search tree using inorder traversal.
 
+
 class Node:
     def __init__(self, data):
         self.left: Node = None
