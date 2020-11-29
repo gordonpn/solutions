@@ -3,12 +3,14 @@ from typing import List
 
 def dropped_requests(request_time: List[int]):
     dropped = 0
-    trans_second = 0
-    trans_ten_seconds = 0
-    trans_minute = 0
 
-    for transaction in request_time:
-        pass
+    for i in range(3, len(request_time)):
+        if request_time[i - 3] == request_time[i]:
+            dropped += 1
+        elif i > 19 and request_time[i] - request_time[i - 20] < 10:
+            dropped += 1
+        elif i > 59 and request_time[i] - request_time[i - 60] < 60:
+            dropped += 1
 
     return dropped
 
