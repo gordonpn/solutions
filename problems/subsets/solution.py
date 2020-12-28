@@ -3,6 +3,9 @@ class Solution:
         results = [[]]
         
         for num in nums:
-            results += [i + [num] for i in results]
+            local_results = []
+            for previous_subset in results:
+                local_results += [previous_subset + [num]]
+            results += local_results
             
         return results
