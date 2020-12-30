@@ -1,8 +1,8 @@
 import heapq
 ​
 class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
-        nums = sorted(nums)
-        
-        return nums[-k]
-            
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        nums = sorted(nums)
+
+        return nums[-k]
+
