@@ -21,7 +21,7 @@ def rover_move(n: int, commands: List[str]) -> int:
 
     for command in commands:
         if command.lower() == "right":
-            if position_col < n:
+            if position_col < n - 1:
                 position_col += 1
         elif command.lower() == "left":
             if position_col > 0:
@@ -30,7 +30,7 @@ def rover_move(n: int, commands: List[str]) -> int:
             if position_row > 0:
                 position_row -= 1
         elif command.lower() == "down":
-            if position_row < n:
+            if position_row < n - 1:
                 position_row += 1
 
     return position_row * n + position_col
@@ -44,8 +44,11 @@ n3 = 5
 commands3 = ["RIGHT", "DOWN", "LEFT", "LEFT", "DOWN"]
 n4 = 5
 commands4 = ["RIGHT", "DOWN", "LEFT", "LEFT", "DOWN", "RIGHT"]
+n5 = 4
+commands5 = ["RIGHT", "RIGHT", "RIGHT", "RIGHT", "DOWN", "DOWN", "DOWN"]
 
 assert rover_move(n1, commands1) == 12
 assert rover_move(n2, commands2) == 8
 assert rover_move(n3, commands3) == 10
 assert rover_move(n4, commands4) == 11
+assert rover_move(n5, commands5) == 15
