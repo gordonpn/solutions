@@ -1,3 +1,4 @@
+[Discussion Post (created on 30/11/2020 at 20:53)](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/solution/)  
 <h2>1047. Remove All Adjacent Duplicates In String</h2><h3>Easy</h3><hr><div><p>Given a string <code>S</code> of lowercase letters, a <em>duplicate removal</em> consists of choosing two adjacent and equal letters, and removing&nbsp;them.</p>
 
 <p>We repeatedly make duplicate removals on S until we no longer can.</p>
