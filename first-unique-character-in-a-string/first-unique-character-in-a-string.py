@@ -8,8 +8,6 @@ class Solution:
         seen = set()
         
         for i in range(len(s)):
-            if i >= len(s):
-                return -1
             if s[i] not in s[i + 1:] and s[i] not in seen:
                 return i
             seen.add(s[i])
