@@ -1,9 +1,12 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        numsDict = {}
-        for index, value in enumerate(nums):
-            search = target - value
-            if numsDict.get(search) is not None:
-                return [numsDict[search], index]
-            numsDict[value] = index
+        memoize = {}
+        
+        for index, num in enumerate(nums):
+            diff = target - num
+            
+            if memoize.get(diff) is None:
+                memoize[num] = index
+            else:
+                return [index, memoize[diff]]
             
