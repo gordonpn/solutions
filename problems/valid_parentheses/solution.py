@@ -1,24 +1,35 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
-        for index in range(len(s)):
-            if s[index] in ('(', '[', '{'):
-                stack.append(s[index])
-            if s[index] in (')', ']', '}'):
-                if len(stack) < 1:
+        
+        for c in s:
+            if c == ")":
+                if not stack:
                     return False
-                if s[index] == ')' and stack[-1] == '(':
-                    stack.pop()
-                elif s[index] == ']' and stack[-1] == '[':
-                    stack.pop()
-                elif s[index] == '}' and stack[-1] == '{':
+                if stack[-1] == "(":
                     stack.pop()
                 else:
                     return False
-        if len(stack) > 0:
+                
+            elif c == "]":
+                if not stack:
+                    return False
+                if stack[-1] == "[":
+                    stack.pop()
+                else:
+                    return False
+                
+            elif c == "}":
+                if not stack:
+                    return False
+                if stack[-1] == "{":
+                    stack.pop()
+                else:
+                    return False
+                
+            else:
+                stack.append(c)
+            
+        if stack:
             return False
         return True
-                    
-                
-               
-                
