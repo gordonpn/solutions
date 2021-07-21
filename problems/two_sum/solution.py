@@ -3,10 +3,10 @@ class Solution:
         memoize = {}
         
         for index, num in enumerate(nums):
-            diff = target - num
             
-            if memoize.get(diff) is None:
-                memoize[num] = index
-            else:
-                return [index, memoize[diff]]
+            seen_num_index = memoize.get(target - num)
             
+            if seen_num_index is not None:
+                return [seen_num_index, index]
+                
+            memoize[num] = index
